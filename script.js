@@ -1,39 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* =====================
-       REVEAL NO SCROLL
-    ====================== */
-    const elements = document.querySelectorAll('.reveal');
+    /* ========= REVEAL ON SCROLL ========= */
+    const revealElements = document.querySelectorAll(".reveal");
 
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        },
-        {
-            threshold: 0.15
-        }
-    );
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+            }
+        });
+    }, { threshold: 0.15 });
 
-    elements.forEach(el => observer.observe(el));
+    revealElements.forEach(el => observer.observe(el));
 
-
-    /* =====================
-       SLIDESHOW DO BANNER
-    ====================== */
+    /* ========= BANNER SLIDESHOW ========= */
     const banners = document.querySelectorAll(".banner-img");
-    let index = 0;
+    let currentIndex = 0;
 
     function trocarBanner() {
-        banners[index].classList.remove("active");
-        index = (index + 1) % banners.length;
-        banners[index].classList.add("active");
+        banners[currentIndex].classList.remove("active");
+        currentIndex = (currentIndex + 1) % banners.length;
+        banners[currentIndex].classList.add("active");
     }
 
-    setInterval(trocarBanner, 5000); // 5 segundos
+    if (banners.length > 1) {
+        setInterval(trocarBanner, 5000);
+    }
 });
-
-elements.forEach(el => observer.observe(el));

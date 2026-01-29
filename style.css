@@ -1,3 +1,4 @@
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -5,12 +6,17 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: #000;
     color: #fff;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
+
 .header {
     border-bottom: 1px solid #222;
 }
@@ -45,11 +51,7 @@ body {
     height: 50px;
 }
 
-/* BANNER */
-.banner-content h1 {
-  font-weight: 800; /* ou 900 */
-  font-size: 4rem;
-}
+/* ================= BANNER ================= */
 
 .banner {
     position: relative;
@@ -58,7 +60,7 @@ body {
     overflow: hidden;
 }
 
-/* IMAGENS */
+/* Imagens do banner */
 .banner-img {
     position: absolute;
     inset: 0;
@@ -75,7 +77,7 @@ body {
     opacity: 1;
 }
 
-/* OVERLAY */
+/* Overlay */
 .banner::after {
     content: "";
     position: absolute;
@@ -85,7 +87,7 @@ body {
     pointer-events: none;
 }
 
-/* TEXTO */
+/* Texto do banner */
 .banner-texto {
     position: absolute;
     top: 50%;
@@ -98,6 +100,7 @@ body {
 
 .banner-texto h1 {
     font-size: 60px;
+    font-weight: 800;
     letter-spacing: 5px;
 }
 
@@ -107,38 +110,7 @@ body {
     letter-spacing: 3px;
 }
 
-/* HOVER */
-.banner:hover .banner-img.active {
-    transform: scale(1.05);
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-    .banner-form {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .banner-form input {
-        width: 100%;
-        max-width: 280px;
-    }
-
-    .banner-form button {
-        width: 100%;
-        max-width: 280px;
-    }
-}
-
-    .banner-texto h1 {
-        font-size: 2.5rem;
-        letter-spacing: 4px;
-    }
-
-    .banner-texto p {
-        font-size: 1rem;
-    }
-    .banner-subtexto {
+.banner-subtexto {
     margin-top: 20px;
     font-size: 0.95rem;
     letter-spacing: 2px;
@@ -149,7 +121,13 @@ body {
     opacity: 0.9;
 }
 
-/* FORM */
+/* Hover */
+.banner:hover .banner-img.active {
+    transform: scale(1.05);
+}
+
+/* ================= FORM NO BANNER ================= */
+
 .banner-form {
     margin-top: 25px;
     display: flex;
@@ -180,7 +158,7 @@ body {
     font-size: 0.8rem;
     letter-spacing: 2px;
     cursor: pointer;
-    transition: background 0.3s ease, color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .banner-form button:hover {
@@ -189,9 +167,8 @@ body {
     border: 1px solid white;
 }
 
+/* ================= SECTIONS ================= */
 
-
-/* SECTIONS */
 .section {
     padding: 80px 40px;
     text-align: center;
@@ -202,7 +179,12 @@ body {
     margin-bottom: 40px;
 }
 
-/* PRODUTOS */
+.destaque {
+    background: #111;
+}
+
+/* ================= PRODUTOS ================= */
+
 .produtos {
     display: flex;
     justify-content: center;
@@ -224,56 +206,27 @@ body {
     letter-spacing: 2px;
 }
 
-/* DESTAQUE */
-.destaque {
-    background: #111;
-}
+/* ================= CADASTRO ================= */
 
-/* FOOTER */
-.footer {
-    border-top: 1px solid #222;
-    padding: 20px;
-    text-align: center;
-    font-size: 12px;
-    letter-spacing: 2px;
-}
-/* ANIMAÇÃO ON SCROLL */
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.9s ease;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-html {
-  scroll-behavior: smooth;
-}
 .cadastro-form {
     padding: 40px 20px;
     text-align: center;
     background-color: #181717;
-    color: #ffffff;
 }
 
 .cadastro-form .banner-subtexto {
-    margin-bottom: 20px;
-    font-size: 1rem;
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 20px;
 }
 
-.cadastro-form .email-form {
+.email-form {
     display: flex;
     justify-content: center;
     gap: 10px;
     flex-wrap: wrap;
 }
 
-.cadastro-form .email-form input {
+.email-form input {
     padding: 12px;
     width: 250px;
     border: 1px solid #ccc;
@@ -281,7 +234,7 @@ html {
     font-size: 1rem;
 }
 
-.cadastro-form .email-form button {
+.email-form button {
     padding: 12px 20px;
     border: none;
     background-color: #333;
@@ -292,6 +245,57 @@ html {
     transition: background-color 0.3s ease;
 }
 
-.cadastro-form .email-form button:hover {
+.email-form button:hover {
     background-color: #555;
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+    border-top: 1px solid #222;
+    padding: 20px;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+/* ================= REVEAL ================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.9s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+    .banner {
+        height: 60vh;
+    }
+
+    .banner-texto h1 {
+        font-size: 2.5rem;
+        letter-spacing: 4px;
+    }
+
+    .banner-texto p {
+        font-size: 1rem;
+    }
+
+    .banner-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .banner-form input,
+    .banner-form button {
+        width: 100%;
+        max-width: 280px;
+    }
 }
