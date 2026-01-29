@@ -1,2 +1,11 @@
 # CORRERIA
-Desenvolvimento prévio de um site de loja de roupas - CORRERIA
+
+Prévia de site para uma marca de roupas.
+
+## Tecnologias
+- HTML
+- CSS
+- JavaScript
+
+## Status
+Projeto em desenvolvimento.
