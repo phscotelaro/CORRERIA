@@ -275,19 +275,58 @@ body {
 /* ================= MOBILE ================= */
 
 @media (max-width: 768px) {
+
+    /* ================= HEADER ================= */
+    .nav {
+        padding: 12px 14px;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .logo {
+        order: -1; /* logo sobe */
+    }
+
+    .logo img {
+        height: 36px;
+    }
+
+    .menu {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        flex-wrap: wrap; /* quebra linha se precisar */
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu a {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    /* ================= BANNER ================= */
     .banner {
-        height: 60vh;
+        height: 50vh; /* menos corte no mobile */
+    }
+
+    .banner-img {
+        object-position: center top; /* prioriza topo da imagem */
     }
 
     .banner-texto h1 {
-        font-size: 2.5rem;
-        letter-spacing: 4px;
+        font-size: 2.2rem;
+        letter-spacing: 3px;
     }
 
     .banner-texto p {
         font-size: 1rem;
+        letter-spacing: 2px;
     }
 
+    /* ================= FORM ================= */
     .banner-form {
         flex-direction: column;
         align-items: center;
@@ -298,4 +337,10 @@ body {
         width: 100%;
         max-width: 280px;
     }
+
+    /* ================= SECTIONS ================= */
+    .section {
+        padding: 56px 16px;
+    }
 }
+
