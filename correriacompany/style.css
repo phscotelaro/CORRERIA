@@ -1,0 +1,297 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: #000;
+    color: #fff;
+}
+
+/* HEADER */
+.header {
+    border-bottom: 1px solid #222;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 14px;
+    transition: opacity 0.3s;
+}
+
+.menu a:hover {
+    opacity: 0.6;
+}
+
+.logo img {
+    height: 50px;
+}
+
+/* BANNER */
+.banner-content h1 {
+  font-weight: 800; /* ou 900 */
+  font-size: 4rem;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+}
+
+/* IMAGENS */
+.banner-img {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(110%) brightness(100%);
+    opacity: 0;
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.banner-img.active {
+    opacity: 1;
+}
+
+/* OVERLAY */
+.banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* TEXTO */
+.banner-texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+}
+
+.banner-texto h1 {
+    font-size: 60px;
+    letter-spacing: 5px;
+}
+
+.banner-texto p {
+    margin-top: 10px;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+
+/* HOVER */
+.banner:hover .banner-img.active {
+    transform: scale(1.05);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .banner-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .banner-form input {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .banner-form button {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+    .banner-texto h1 {
+        font-size: 2.5rem;
+        letter-spacing: 4px;
+    }
+
+    .banner-texto p {
+        font-size: 1rem;
+    }
+    .banner-subtexto {
+    margin-top: 20px;
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+/* FORM */
+.banner-form {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.banner-form input {
+    padding: 12px 14px;
+    width: 260px;
+    border: 1px solid rgba(255,255,255,0.4);
+    background: transparent;
+    color: white;
+    outline: none;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.banner-form input::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+.banner-form button {
+    padding: 12px 20px;
+    border: none;
+    background: white;
+    color: black;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.banner-form button:hover {
+    background: black;
+    color: white;
+    border: 1px solid white;
+}
+
+
+
+/* SECTIONS */
+.section {
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.section h2 {
+    letter-spacing: 4px;
+    margin-bottom: 40px;
+}
+
+/* PRODUTOS */
+.produtos {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.produto {
+    width: 220px;
+}
+
+.produto img {
+    width: 100%;
+    filter: grayscale(100%);
+}
+
+.produto p {
+    margin-top: 10px;
+    letter-spacing: 2px;
+}
+
+/* DESTAQUE */
+.destaque {
+    background: #111;
+}
+
+/* FOOTER */
+.footer {
+    border-top: 1px solid #222;
+    padding: 20px;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+/* ANIMAÇÃO ON SCROLL */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.9s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+html {
+  scroll-behavior: smooth;
+}
+.cadastro-form {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #181717;
+    color: #ffffff;
+}
+
+.cadastro-form .banner-subtexto {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cadastro-form .email-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.cadastro-form .email-form input {
+    padding: 12px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.cadastro-form .email-form button {
+    padding: 12px 20px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.cadastro-form .email-form button:hover {
+    background-color: #555;
+}
