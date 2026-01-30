@@ -270,6 +270,10 @@ body {
 /* ================= MOBILE ================= */
 
 @media (max-width: 768px) {
+    banner {
+        padding-top: 55%; /* deixa o banner mais baixo no mobile */
+    }
+}
 
     /* ================= HEADER ================= */
     .nav {
@@ -342,6 +346,5 @@ body {
     .section {
         padding: 52px 16px;
     }
-}
 
 
